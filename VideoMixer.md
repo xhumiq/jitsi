@@ -100,8 +100,8 @@ SFU to decide and manage which streams each participant are allowed to see.
 2. Authorization: support jwt tokens via cookies - the cookies can be created by a different web site.
 3. Web site is stand alone not part of the Jitsi application but must be allowed to live under the same domain - a /mcu url prefix will be its root url.
 4. Layout shall be two columns.
-  1. Left column will show video feed of stage stream.
-  2. Right column will show scrollable participant list with checkbox allowing for the selection of participants per stage.
+   1. Left column will show video feed of stage stream.
+   2. Right column will show scrollable participant list with checkbox allowing for the selection of participants per stage.
 5. A button shall be provided to update the stage video stream
 6. A button shall be provided to change the selection of participants grouped 4/9/25 per page.
 7. Buttons shall be provided to move the selection to the next/prev group page.
