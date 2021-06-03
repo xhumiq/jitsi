@@ -79,7 +79,13 @@ SFU to decide and manage which streams each participant are allowed to see.
       5. Return full participant info - see [Get: /participants/{id}]
    2. Get: /participants/{id}
       1. Returns a single participant's properties
-      2. ID, Name (not required), VideoStatus (muted/unmuted,resolution,framerate,codec,speed), AudioStatus (muted/unmuted,codec,speed), WebRTC stream link, StageStatus, etc...
+      2. ID
+      3. Name (not required)
+      4. VideoStatus (muted/unmuted,resolution,framerate,codec,speed)
+      5. AudioStatus (muted/unmuted,codec,speed)
+      6. WebRTC stream link
+      7. StageStatus
+      8. etc...
    3. Post: /stage/participants
       1. Merges the streams of the selected participants into a single stream.
       2. Request: {"ids":[id1, id2, id3]}
@@ -92,7 +98,7 @@ SFU to decide and manage which streams each participant are allowed to see.
       1. Allow the moderator to mute/unmute the video
       2. Allow the moderator to change the default resolution
       3. Allow the moderator to change the default frame rate
-      4. Allow the moderator to show/hide names of participants on the stage stream
+      4. Allow the moderator to show/hide the names of the selected participants on the stage stream
    6. Get: /stage/video
       1. Returns the current mute state
       2. Returns the current resolution and frame rate
