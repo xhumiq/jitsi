@@ -77,15 +77,14 @@ SFU to decide and manage which streams each participant are allowed to see.
          2. Current Page (starts at one)
          3. Total Page Count
       5. Return full participant info - see [Get: /participants/{id}]
-   2. Get: /participants/{id}
-      1. Returns a single participant's properties
-      2. Participant ID
-      3. Name (not required)
-      4. VideoStatus (muted/unmuted,resolution,framerate,codec,speed)
-      5. AudioStatus (muted/unmuted,codec,speed)
-      6. WebRTC stream link
-      7. StageStatus
-      8. etc...
+   2. Get: /participants/{id}  (Returns a single participant's properties)
+      1. Participant ID
+      2. Name (not required)
+      3. VideoStatus (muted/unmuted,resolution,framerate,codec,speed)
+      4. AudioStatus (muted/unmuted,codec,speed)
+      5. WebRTC stream link
+      6. StageStatus
+      7. etc...
    3. Post: /stage/participants
       1. Merges the streams of the selected participants into a single stream.
       2. Request: {"ids":[id1, id2, id3]}
