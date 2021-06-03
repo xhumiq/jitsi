@@ -105,4 +105,5 @@ SFU to decide and manage which streams each participant are allowed to see.
 5. A button shall be provided to update the stage video stream
 6. A button shall be provided to change the selection of participants grouped 4/9/25 per page.
 7. Buttons shall be provided to move the selection to the next/prev group page.
-
+8. Buttons shall be provided to mute/unmute the video stream.
+9. When no participants are selected and and update is requested - the stage video stream should be muted.
