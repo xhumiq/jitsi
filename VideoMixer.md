@@ -79,7 +79,7 @@ SFU to decide and manage which streams each participant are allowed to see.
       5. Return full participant info - see [Get: /participants/{id}]
    2. Get: /participants/{id}
       1. Returns a single participant's properties
-      2. ID
+      2. Participant ID
       3. Name (not required)
       4. VideoStatus (muted/unmuted,resolution,framerate,codec,speed)
       5. AudioStatus (muted/unmuted,codec,speed)
