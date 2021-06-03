@@ -52,7 +52,7 @@ SFU to decide and manage which streams each participant are allowed to see.
 
 ## The MCU Actor Specifications
 
-1. Written using rust (preferred) or C/C++: bindings to FFMpeg are assumed - although other video libraries approved by the client maybe used.
+1. Written using rust (preferred) or C/C++.
 2. Makefile for building the application from scratch is required - assume build server is a newly minted debian 10 machine with no dependencies installed other than the build-essential package.
 3. This means the makefile must download/install the necessary dependencies including ffmpeg, rust, and cargo if necessary.
 4. Client must be able to compile the application successfully with only the makefile and accompanying source code files from a git clone of a specified repo branch without developers help on a clean Amazon EC2 Debian install (GPU may be required).
