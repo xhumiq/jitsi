@@ -11,13 +11,13 @@ MCU architecture which Zoom and Blue Jeans uses.
 
 ### SFUs – Selective Forwarding Units
 
-![SFU Selective Forwarding Units](./images/WebRTC_SFU.png)
+![SFU - Selective Forwarding Units](./images/WebRTC_SFU.png)
 
 In this case, each participant still sends just one set of video and audio up to the SFU, like our MCU. However, the SFU doesn’t make any composite streams. Rather, it sends a different stream down for each user. In this example, 4 streams are received by each participant, since there are 5 people in the call. As you can see - bandwidth and CPU resources are now the responsibility of each participant.
 
 ### MCUs – Multipoint Control Units
 
-![MCUs – Multipoint Control Units](./images/WebRTC_MCU.png)
+![MCU - Multipoint Control Units](./images/WebRTC_MCU.png)
 
 Each peer in the group call establishes a connection with the MCU server to send up its video and audio. The MCU, in turn, makes a composite video and audio stream containing all of the video/audio from each of the peers, and sends that back to everyone. Bandwidth and CPU resources are reduced to the minimum required for each participant.
 
@@ -40,6 +40,8 @@ If we can introduce a silent participant in each meeting, we will have a way to 
 participant streams via a program that runs in the cloud with guaranteed high bandwidth
 and merge them together into a single video stream. This allows us to use the flexibility of
 SFU to decide and manage which streams each participant are allowed to see.
+
+![Jitsi with MCU – Gallery as a participant](./images/Jitsi_MCU.png)
 
 ### Modification to Jitsi requires four parts...
 
@@ -104,6 +106,8 @@ SFU to decide and manage which streams each participant are allowed to see.
 
 ## The MCU Front End Specifications
 
+![MCU Staging Front End](./images/MCU_Stage_Page.png)
+
 1. Authentication: support OAuth2.0 - needs login page.
 2. Authorization: support jwt tokens via cookies - the cookies can be created by a different web site.
 3. Web site is stand alone not part of the Jitsi application but must be allowed to live under the same domain - a /mcu url prefix will be its root url.
@@ -113,5 +117,6 @@ SFU to decide and manage which streams each participant are allowed to see.
 5. A button shall be provided to update the stage video stream
 6. A button shall be provided to change the selection of participants grouped 4/9/25 per page.
 7. Buttons shall be provided to move the selection to the next/prev group page.
-8. Buttons shall be provided to mute/unmute the video stream.
-9. When no participants are selected and and update is requested - the stage video stream should be muted.
+8. Buttons (or check box) shall be provided to mute/unmute the video stream.
+9. Buttons (or check box) shall be provided to include / not include the moderator as part of the paged gallery mode.
+10. When no participants are selected and and update is requested - the stage video stream should be muted.
