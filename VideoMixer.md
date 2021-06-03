@@ -55,7 +55,8 @@ SFU to decide and manage which streams each participant are allowed to see.
 3. Must support GPU - all gpus supported by AWS EC2 are allowed.
 4. Must support various input video resolutions - output default is 720p and allowed to change.
 5. Must support various input video frame rates - output default is 25fps and allowed to change.
-6. Must support various input video codecs - output will be h.264 subject to change.
+6. Must support various input video codecs - output will be H.264 subject to change.
+6. Must support various input audio codecs - output will be mp3 subject to change.
 7. Must allow participants video resolution and frame rate to change over time.
 8. Maximize participant video frame size in merged stream allowing for a minimally thick borders with (around 5 to 10px lower the better) padding between frames. Programmer has discretion however must be approved by client.
 9. Minimize latency as much as can be allowed.
@@ -77,7 +78,7 @@ SFU to decide and manage which streams each participant are allowed to see.
       5. Return full participant info - see [Get: /participants/{id}]
    2. Get: /participants/{id}
       1. Returns a single participant's properties
-      2. ID, Name (not required), VideoStatus (muted/unmuted,resolution,framerate,codec,speed), AudioStatus (muted/unmuted,code,speed), WebRTC stream link, StageStatus, etc...
+      2. ID, Name (not required), VideoStatus (muted/unmuted,resolution,framerate,codec,speed), AudioStatus (muted/unmuted,codec,speed), WebRTC stream link, StageStatus, etc...
    3. Post: /stage/participants
       1. Merges the streams of the selected participants into a single stream.
       2. Request: {"ids":[id1, id2, id3]}
