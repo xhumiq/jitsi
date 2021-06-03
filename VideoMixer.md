@@ -50,7 +50,7 @@ SFU to decide and manage which streams each participant are allowed to see.
 
 ## The MCU Actor Specifications
 
-1. Written using rust or C/C++ - bindings to FFMpeg is assumed - although other video libraries approved by the client maybe used.
+1. Written using rust or C/C++ - bindings to FFMpeg are assumed - although other video libraries approved by the client maybe used.
 2. Must support GPU - all gpus supported by AWS EC2 are allowed.
 3. Must support various input video resolutions - output default is 720p and allowed to change.
 4. Must support various input video frame rates - output default is 25fps and allowed to change.
