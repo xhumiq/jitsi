@@ -57,7 +57,7 @@ SFU to decide and manage which streams each participant are allowed to see.
 5. Must support various input video frame rates - output default is 25fps and allowed to change.
 6. Must support various input video codecs - output will be H.264 subject to change.
 6. Must support various input audio codecs - output will be mp3 subject to change.
-7. Must allow participants video resolution and frame rate to change over time.
+7. Must allow participant's video resolution and frame rate to change over time.
 8. Maximize participant video frame size in merged stream allowing for a minimally thick borders with (around 5 to 10px lower the better) padding between frames. Programmer has discretion however must be approved by client.
 9. Minimize latency as much as can be allowed.
 10. Must allow the names of participants to show or not show in the merged video stream.
