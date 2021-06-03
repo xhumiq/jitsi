@@ -23,11 +23,11 @@ Each peer in the group call establishes a connection with the MCU server to send
 
 ### Why is this important
 
-Many of the members in our church have bad bandwidth and this especially 
-includes the host members (moderators). Unfortunately the issue of limited 
+Many of the members in our church have bandwidth limitations and this is especially 
+true for the host members (moderators). Unfortunately the issue of limited 
 bandwidth resources for the churches are not resolvable in the near future.
 We have looked into other platforms that support the MCU architecture and
-they are not a good fit for our needs. Instead we have looked into implementing 
+they are not a good fit for our needs. Instead we are looking into implementing 
 SFU and MCU simultaneously in our Jitsi solution.
 
 > Tldr; Jitsi requires too many streams per participant which becomes a real problem
@@ -37,8 +37,8 @@ SFU and MCU simultaneously in our Jitsi solution.
 
 Instead of modifying the Jitsi architecture to use MCU, we will use a combination of both.
 If we can introduce a silent participant in each meeting, we will have a way to siphon 
-participant streams via a program that runs in the cloud with guaranteed high bandwidth
-and merge them together into a single video stream. This allows us to use the flexibility of
+participant streams via a program that runs in the cloud with guaranteed high bandwidth resources
+and merge them together into a single composite video stream. This allows us to use the flexibility of
 SFU to decide and manage which streams each participant are allowed to see.
 
 ![Jitsi with MCU – Gallery as a participant](./images/Jitsi_MCU.png)
