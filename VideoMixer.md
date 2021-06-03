@@ -53,19 +53,22 @@ SFU to decide and manage which streams each participant are allowed to see.
 ## The MCU Actor Specifications
 
 1. Written using rust or C/C++: bindings to FFMpeg are assumed - although other video libraries approved by the client maybe used.
-2. WebRTC protocol is required due to limitations of Jitsi.
-3. Must support GPU - all gpus supported by AWS EC2 are allowed.
-4. Must support various input video resolutions - output default is 720p and allowed to change.
-5. Must support various input video frame rates - output default is 25fps and allowed to change.
-6. Must support various input video codecs - output will be H.264 subject to change.
-6. Must support various input audio codecs - output will be mp3 subject to change.
-7. Must allow participant's video resolution and frame rate to change over time.
-8. Maximize participant video frame size in merged stream allowing for a minimally thick borders with (around 5 to 10px lower the better) padding between frames. Programmer has discretion however must be approved by client.
-9. Minimize latency as much as can be allowed.
-10. Must allow the names of participants to show or not show in the merged video stream.
-11. Configured settings should be saved to an embedded database or local file to be restored in the next meeting.
-12. The merged video stream should appear in the meeting under the participant name "Stage".
-13. API Specifications: Programmer is responsible for creating pseudo swagger yaml document or postman collection. Programmer has discretion over request and response body shapes.
+2. Makefile for building the application from scratch is required - assume build server is a newly minted debian 10 machine with no dependencies installed other than the build-essential package.
+3. This means the makefile must download/install the necessary dependencies including ffmpeg, rust, and cargo if necessary.
+4. Client must be able to compile the application successfully with only the makefile and without developers help on a clean Amazon EC2 Debian install (GPU may be required).
+5. WebRTC protocol is required due to limitations of Jitsi.
+6. Must support GPU - all gpus supported by AWS EC2 are allowed.
+7. Must support various input video resolutions - output default is 720p and allowed to change.
+8. Must support various input video frame rates - output default is 25fps and allowed to change.
+9. Must support various input video codecs - output will be H.264 subject to change.
+10. Must support various input audio codecs - output will be mp3 subject to change.
+11. Must allow participant's video resolution and frame rate to change over time.
+12. Maximize participant video frame size in merged stream allowing for a minimally thick borders with (around 5 to 10px lower the better) padding between frames. Programmer has discretion however must be approved by client.
+13. Minimize latency as much as can be allowed.
+14. Must allow the names of participants to show or not show in the merged video stream.
+15. Configured settings should be saved to an embedded database or local file to be restored in the next meeting.
+16. The merged video stream should appear in the meeting under the participant name "Stage".
+17. API Specifications: Programmer is responsible for creating pseudo swagger yaml document or postman collection. Programmer has discretion over request and response body shapes.
    1. Get: /participants
       1. Returns full list of participants sorted by Name asc/desc
       2. Allow filtering by muted/unmuted video, muted/unmuted audio
