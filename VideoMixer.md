@@ -68,13 +68,14 @@ SFU to decide and manage which streams each participant are allowed to see.
       1. Returns full list of participants sorted by Name asc/desc
       2. Allow filtering by muted/unmuted video, muted/unmuted audio
       3. Allow paging if paging info is requested via query string
-         1. idx=Starting Index (not page number but absolute number)
-         2. cnt=Maximum count per pages
+         1. idx = Starting Index (not page number but absolute number)
+         2. cnt = Maximum count per pages
          3. if starting index is missing or negative assume idx is zero
          4. if count is missing or negative assume count is infinite.
       4. Return paging info as part of response even if paging is not requested.
          1. Total Count
-         2. Current Page (starts at one) and Total Page Count
+         2. Current Page (starts at one)
+         3. Total Page Count
       5. Return full participant info - see [Get: /participants/{id}]
    2. Get: /participants/{id}
       1. Returns a single participant's properties
