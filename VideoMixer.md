@@ -66,10 +66,10 @@ SFU to decide and manage which streams each participant are allowed to see.
 12. Must allow participant's video resolution and frame rate to change over time.
 13. Maximize participant video frame size in merged stream allowing for a minimally thick border with (around 5 to 10px lower the better) padding between frames. Programmer has discretion over the gallery layout however it must be approved by client.
 14. Minimize latency as much as can be allowed.
-15. Assume participants video stream will intermittently terminate or have data corruption in its video or audio stream. The participants video stream may change resolution or framerate periodically.
-16. The actor must be able to gracefully shut down the stream and restart the stream automatically when the input stream become more stable. All unhandled errors in the video merge process should shutdown the stream and restart automatically.
+15. Assume participants video stream will intermittently terminate or have data corruption in its video or audio stream. The participant's video stream may change resolution or framerate periodically.
+16. The actor must be able to gracefully ignore an input stream and accept an input stream automatically when the input stream become more stable. All unhandled errors in the video merge process should shutdown the stream and restart automatically.
 17. Testing of the stability of the backend and front end MCU Actor process is the developers responsibility.
-18. As many different scenarios that cause instability should be discovered by the developer and tested for the system's handling of those scenarios. All known scenarios should not cause the system to crash but at the very least the system should recover in an appropriately quick manner.
+18. Developers should active seek for and notify client of all scenarios that can cause instability. These senarios must be tested for the system's handling of those scenarios. All known scenarios should not cause the system to crash but at the very least the system should recover in an appropriately quick manner.
 19. Must allow the names of participants to show or not show in the merged video stream.
 20. Configured settings should be saved to an embedded database or local file to be restored in the next meeting. Rocks/sled or RocksDB are databases that could be used.
 21. The merged video stream should appear in the meeting under the participant name "Stage".
@@ -119,8 +119,8 @@ SFU to decide and manage which streams each participant are allowed to see.
 1. The front end should be written using React with the Material UI library. If the developer is not comfortable with Material UI, Bootstrap may also be used.
 2. Authentication: support OAuth2.0 - needs login page.
 3. Authorization: support jwt tokens via cookies - the cookies can be created by a different web site.
-4. Web site is stand alone not part of the Jitsi application but must be allowed to live under the same domain - a /mcu url prefix will be its root url.
-5. Layout shall be two columns.
+4. Web site is stand alone; not part of the Jitsi application but must be allowed to live under the same domain - a /mcu url prefix will be its root url.
+5. Layout shall be in two columns.
    1. Left column will show video feed of stage stream.
    2. Right column will show a scrollable participant list with a checkbox allowing for the selection of participants per stage.
 6. A button shall be provided to update the stage video stream
