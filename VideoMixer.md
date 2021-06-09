@@ -56,23 +56,24 @@ SFU to decide and manage which streams each participant are allowed to see.
 2. Makefile for building the application from scratch is required - assume build server is a newly minted debian 10 machine with no dependencies installed other than the build-essential package.
 3. This means the makefile must download/install the necessary dependencies including ffmpeg, rust, and cargo if necessary.
 4. Client must be able to compile the application successfully with only the makefile and accompanying source code files from a git clone of a specified repo branch without developers help on a clean Amazon EC2 Debian install (GPU may be required).
-5. WebRTC protocol is required due to limitations of Jitsi.
-6. Must support GPU - all gpus supported by AWS EC2 are allowed.
-7. Must support various input video resolutions - output default is 720p and allowed to change.
-8. Must support various input video frame rates - output default is 25fps and allowed to change.
-9. Must support various input video codecs - output will be H.264 subject to change.
-10. Must support various input audio codecs - output will be mp3 subject to change.
-11. Must allow participant's video resolution and frame rate to change over time.
-12. Maximize participant video frame size in merged stream allowing for a minimally thick border with (around 5 to 10px lower the better) padding between frames. Programmer has discretion over the gallery layout however it must be approved by client.
-13. Minimize latency as much as can be allowed.
-14. Assume participants video stream will intermittently terminate or have data corruption in its video or audio stream. The participants video stream may change resolution or framerate periodically.
-15. The actor must be able to gracefully shut down the stream and restart the stream automatically when the input stream become more stable. All unhandled errors in the video merge process should shutdown the stream and restart automatically.
-16. Testing of the stability of the backend and front end MCU Actor process is the developers responsibility.
-17. As many different scenarios that cause instability should be discovered by the developer and tested for the system's handling of those scenarios. All known scenarios should not cause the system to crash but at the very least the system should recover in an appropriately quick manner.
-18. Must allow the names of participants to show or not show in the merged video stream.
-19. Configured settings should be saved to an embedded database or local file to be restored in the next meeting.
-20. The merged video stream should appear in the meeting under the participant name "Stage".
-21. API Specifications: Programmer is responsible for creating pseudo swagger yaml document or postman collection. Programmer has discretion over request and response body shapes.
+5. If written in C/C++ developers must show service is free of leaks using an authorized leak detector tool output.
+6. WebRTC protocol is required due to limitations of Jitsi.
+7. Must support GPU - all gpus supported by AWS EC2 are allowed.
+8. Must support various input video resolutions - output default is 720p and allowed to change.
+9. Must support various input video frame rates - output default is 25fps and allowed to change.
+10. Must support various input video codecs - output will be H.264 subject to change.
+11. Must support various input audio codecs - output will be mp3 subject to change.
+12. Must allow participant's video resolution and frame rate to change over time.
+13. Maximize participant video frame size in merged stream allowing for a minimally thick border with (around 5 to 10px lower the better) padding between frames. Programmer has discretion over the gallery layout however it must be approved by client.
+14. Minimize latency as much as can be allowed.
+15. Assume participants video stream will intermittently terminate or have data corruption in its video or audio stream. The participants video stream may change resolution or framerate periodically.
+16. The actor must be able to gracefully shut down the stream and restart the stream automatically when the input stream become more stable. All unhandled errors in the video merge process should shutdown the stream and restart automatically.
+17. Testing of the stability of the backend and front end MCU Actor process is the developers responsibility.
+18. As many different scenarios that cause instability should be discovered by the developer and tested for the system's handling of those scenarios. All known scenarios should not cause the system to crash but at the very least the system should recover in an appropriately quick manner.
+19. Must allow the names of participants to show or not show in the merged video stream.
+20. Configured settings should be saved to an embedded database or local file to be restored in the next meeting. Rocks/sled or RocksDB are databases that could be used.
+21. The merged video stream should appear in the meeting under the participant name "Stage".
+22. API Specifications: Programmer is responsible for creating pseudo swagger yaml document or postman collection. Programmer has discretion over request and response body shapes.
    1. Get: /participants
       1. Returns full list of participants sorted by Name asc/desc
       2. Allow filtering by muted/unmuted video, muted/unmuted audio
