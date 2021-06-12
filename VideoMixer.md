@@ -3,11 +3,19 @@
 ## Background
 
 Currently the Jitsi Server is designed for a limited number of users.
-Many of our churches have over 20+ members and some over 80 members.
+Many of our groups have over 20+ members and some over 80 members.
 The Jitsi software ware uses the SFU architecture as opposed to the 
 MCU architecture which Zoom and Blue Jeans uses.
 
 > https://webrtc.ventures/2020/12/webrtc-media-servers-sfus-vs-mcus/
+
+### Current Problems
+
+When groups are live streaming, many of the users' video stream are not viewable even though
+there webcam is enabled and permission to use the web is given. If viewing in gallery mode,
+many of the squares are black with no video. If the number of users grow beyond 20 -
+a seemly arbitrary number then the meeting room will close with an error message and
+all members are kicked out.
 
 ### SFUs – Selective Forwarding Units
 
@@ -23,15 +31,15 @@ Each peer in the group call establishes a connection with the MCU server to send
 
 ### Why is this important
 
-Many of the members in our church have bandwidth limitations and this is especially 
+Many of the members in our organization have bandwidth limitations and this is especially 
 true for the host members (moderators). Unfortunately the issue of limited 
-bandwidth resources for the churches are not resolvable in the near future.
+bandwidth resources for the groups are not resolvable in the near future.
 We have looked into other platforms that support the MCU architecture and
 they are not a good fit for our needs. Instead we are looking into implementing 
 SFU and MCU simultaneously in our Jitsi solution.
 
 > Tldr; Jitsi requires too many streams per participant which becomes a real problem
-> even for the moderators when the size of the church is larger then 15 members.
+> even for the moderators when the size of a group is larger then 15 members.
 
 ## Proposal
 
